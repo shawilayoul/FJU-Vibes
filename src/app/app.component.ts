@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true, // Since you're using standalone components, this tells Angular this is a standalone component
+  imports: [
+    RouterOutlet, // Router outlet to load routed views
+    HeaderComponent, // Your header component
+    FooterComponent, // Your footer component
+    CommonModule, // Import the common module for Angular features like ngIf, ngFor, etc.
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'], // Corrected 'styleUrl' to 'styleUrls'
 })
 export class AppComponent {
   title = 'fju-vibe';

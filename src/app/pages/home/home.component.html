@@ -1,0 +1,32 @@
+<div class="home-container">
+    <!-- Header Section -->
+    <header class="home-header">
+      <h1>Welcome to FJU-Christiant-Vibes</h1>
+      <p>Your personal music experience</p>
+    </header>
+  
+    <!-- Featured Section -->
+    <section class="featured-section">
+      <h2>Featured Playlists</h2>
+      <div class="featured-playlists">
+        <div class="playlist-card" *ngFor="let playlist of featuredPlaylists">
+          <img [src]="playlist.imageUrl" alt="Playlist Image" class="playlist-image">
+          <h3>{{ playlist.title }}</h3>
+          <p>{{ playlist.description }}</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Trending Section -->
+    <section class="trending-section">
+      <h2>Trending Now</h2>
+      <div class="trending-songs">
+        <div class="song-card" *ngFor="let song of trendingSongs">
+          <img [src]="song.coverImage" alt="Song Cover" class="song-image">
+          <h3>{{ song.title }}</h3>
+          <p>{{ song.artist }}</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  

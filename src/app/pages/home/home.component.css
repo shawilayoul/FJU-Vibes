@@ -1,0 +1,159 @@
+.home-container {
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .home-header {
+    text-align: center;
+    margin-bottom: 40px;
+  
+    h1 {
+      font-size: 36px;
+      color: #333;
+    }
+  
+    p {
+      font-size: 18px;
+      color: #777;
+    }
+  }
+  
+  .featured-section, .trending-section {
+    margin-bottom: 40px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .featured-playlists, .trending-songs {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .playlist-card, .song-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    flex: 1;
+    margin-bottom: 20px;
+    min-width: 220px; /* Ensure the cards are not too small */
+  }
+  
+  .playlist-card:hover, .song-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .playlist-image, .song-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .home-footer {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-top: 40px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* Mobile screens */
+  @media (max-width: 768px) {
+    .home-header h1 {
+      font-size: 28px;
+    }
+  
+    .home-header p {
+      font-size: 16px;
+    }
+  
+    .featured-playlists, .trending-songs {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .playlist-card, .song-card {
+      width: 90%; /* Take up most of the screen width on mobile */
+      max-width: 300px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    p {
+      font-size: 12px;
+    }
+  }
+  
+  /* Tablet screens */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .home-header h1 {
+      font-size: 32px;
+    }
+  
+    .home-header p {
+      font-size: 18px;
+    }
+  
+    .featured-playlists, .trending-songs {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .playlist-card, .song-card {
+      width: 45%;
+    }
+  
+    h2 {
+      font-size: 26px;
+    }
+  }
+  
+  /* Desktop screens */
+  @media (min-width: 1025px) {
+    .home-header h1 {
+      font-size: 36px;
+    }
+  
+    .home-header p {
+      font-size: 18px;
+    }
+  
+    .featured-playlists, .trending-songs {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .playlist-card, .song-card {
+      width: 22%; /* Less width for more cards per row */
+      max-width: 300px;
+    }
+  
+    h2 {
+      font-size: 28px;
+    }
+  }
+  

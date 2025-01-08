@@ -1,0 +1,88 @@
+/* Basic styling for the playlist page */
+.playlist-page {
+    text-align: center;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .playlist-list {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px; /* Adds space between the playlist items */
+  }
+  
+  .playlist-list li {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .playlist-list li:hover {
+    transform: scale(1.05); /* Adds a hover effect */
+  }
+  
+  .playlist-list li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+  }
+  
+  .playlist-list li a:hover {
+    text-decoration: underline;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Media Query for Tablet (600px to 768px) */
+  @media (max-width: 768px) {
+    .playlist-page {
+      margin: 15px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .playlist-list {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  
+    .playlist-list li {
+      padding: 10px;
+    }
+  
+    .playlist-list li a {
+      font-size: 16px;
+    }
+  }
+  
+  /* Media Query for Mobile (up to 600px) */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+  
+    .playlist-list {
+      grid-template-columns: 1fr; /* One item per row */
+    }
+  
+    .playlist-list li {
+      padding: 10px;
+    }
+  
+    .playlist-list li a {
+      font-size: 14px;
+    }
+  }
+  

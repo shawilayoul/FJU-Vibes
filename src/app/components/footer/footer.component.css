@@ -1,0 +1,44 @@
+.music-footer {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .music-footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .music-footer p {
+    margin: 0;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #f1c40f; /* Hover effect for icons */
+  }
+  
+  @media (max-width: 768px) {
+    .music-footer .footer-content {
+      flex-direction: column;
+    }
+    .social-links {
+      margin-top: 10px;
+    }
+  }
+  
