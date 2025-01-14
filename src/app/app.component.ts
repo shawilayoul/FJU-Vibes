@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';  // Import HttpClientModule
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
     HeaderComponent, // Your header component
     FooterComponent, // Your footer component
     CommonModule, // Import the common module for Angular features like ngIf, ngFor, etc.
+    HttpClientModule, // Import HttpClientModule to make HTTP requests
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'], // Corrected 'styleUrl' to 'styleUrls'

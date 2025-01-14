@@ -4,85 +4,103 @@
     margin: 20px;
     font-family: Arial, sans-serif;
   }
-  
-  .playlist-list {
-    list-style-type: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px; /* Adds space between the playlist items */
-  }
-  
-  .playlist-list li {
-    background-color: #f0f0f0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .playlist-list li:hover {
-    transform: scale(1.05); /* Adds a hover effect */
-  }
-  
-  .playlist-list li a {
-    text-decoration: none;
-    color: #007bff;
-    font-size: 18px;
-    display: block;
+  /* Container for the playlist cards */
+.playlist-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual playlist card */
+.playlist-card {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect on playlist card */
+.playlist-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image styling within the playlist card */
+.playlist-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Details section inside the playlist card */
+.playlist-details {
+  padding: 10px;
+}
+
+.playlist-details h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.playlist-details p {
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2em;
+}
+
+/* Responsive Styles */
+
+/* On small screens like mobile (max-width: 600px), adjust layout */
+@media (max-width: 600px) {
+  .playlist-container {
+    grid-template-columns: 1fr; /* One column layout on small screens */
+    gap: 15px;
     padding: 10px;
   }
-  
-  .playlist-list li a:hover {
-    text-decoration: underline;
+
+  .playlist-card {
+    height: auto; /* Allow playlist cards to have dynamic height */
   }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #333;
+
+  .playlist-image {
+    height: 180px; /* Slightly reduced image height for small screens */
   }
-  
-  /* Media Query for Tablet (600px to 768px) */
-  @media (max-width: 768px) {
-    .playlist-page {
-      margin: 15px;
-    }
-  
-    h1 {
-      font-size: 1.5rem;
-    }
-  
-    .playlist-list {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-  
-    .playlist-list li {
-      padding: 10px;
-    }
-  
-    .playlist-list li a {
-      font-size: 16px;
-    }
+
+  .playlist-details h3 {
+    font-size: 1.1em; /* Adjust font size for small screens */
   }
-  
-  /* Media Query for Mobile (up to 600px) */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-  
-    .playlist-list {
-      grid-template-columns: 1fr; /* One item per row */
-    }
-  
-    .playlist-list li {
-      padding: 10px;
-    }
-  
-    .playlist-list li a {
-      font-size: 14px;
-    }
+
+  .playlist-details p {
+    font-size: 0.8em; /* Adjust font size for better readability */
   }
+}
+
+/* On medium screens (between 600px and 768px), adjust layout slightly */
+@media (max-width: 768px) {
+  .playlist-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout for tablets */
+  }
+}
+
+/* On large screens, retain the original layout with 3+ columns */
+@media (min-width: 1024px) {
+  .playlist-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* More space on larger screens */
+  }
+
+  .playlist-details h3 {
+    font-size: 1.3em; /* Larger font size on bigger screens */
+  }
+}
+
   

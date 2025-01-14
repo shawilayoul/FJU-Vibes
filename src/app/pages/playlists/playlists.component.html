@@ -1,11 +1,25 @@
 <div class="playlist-page">
-    <h1>My Playlists</h1>
-    
-    <!-- Example of a playlist list -->
-    <ul class="playlist-list">
-      <li *ngFor="let playlist of playlists">
-        <a [routerLink]="['/playlist', playlist.id]">{{ playlist.name }}</a>
-      </li>
-    </ul>
+  <h1>My Playlists</h1>
+
+<!-- playlists.component.html -->
+<div *ngIf="playlists.length > 0; else loading">
+  <div class="playlist-container">
+    <div *ngFor="let playlist of playlists" class="playlist-card">
+      <img [src]="playlist.artwork" alt="{{ playlist.title }}" class="playlist-image" />
+      <div class="playlist-details">
+        <h3>{{ playlist.title }}</h3>
+        <p>{{ playlist.description }}</p>
+        <p><strong>Created At:</strong> {{ playlist.createdAt | date:'short' }}</p>
+      </div>
+    </div>
   </div>
-  
+</div>
+
+<!-- Loading spinner displayed if playlists are not available yet -->
+<ng-template #loading>
+  <div class="loading-spinner">
+    <p>Loading playlists...</p>
+  </div>
+</ng-template>
+
+</div>

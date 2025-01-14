@@ -29,6 +29,8 @@ export class HomeComponent implements OnInit {
     }
   ];
 
+ 
+
   trendingSongs = [
     { 
       title: 'Blinding Lights', 
