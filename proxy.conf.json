@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "https://musicserver-uluy.onrender.com",
+      "secure": false
+    }
+  }
+  

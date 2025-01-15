@@ -1,32 +1,50 @@
 <div class="home-container">
-    <!-- Header Section -->
-    <header class="home-header">
-      <h1>Welcome to VibePlay</h1>
-      <p>Your personal music experience</p>
-    </header>
-  
-    <!-- Featured Section -->
-    <section class="featured-section">
-      <h2>Featured Playlists</h2>
-      <div class="featured-playlists">
-        <div class="playlist-card" *ngFor="let playlist of featuredPlaylists">
-          <img [src]="playlist.imageUrl" alt="Playlist Image" class="playlist-image">
-          <h3>{{ playlist.title }}</h3>
-          <p>{{ playlist.description }}</p>
+  <!-- Header Section -->
+  <header class="home-header">
+    <h1>Welcome to VibePlay</h1>
+    <p>Your personal music experience</p>
+  </header>
+
+  <!-- Featured Section -->
+  <section class="featured-section">
+    <h2>Featured Playlists</h2>
+    <!-- playlists.component.html -->
+    <div *ngIf="featuredPlaylists.length > 0; else loading">
+      <div class="playlist-container">
+        <div *ngFor="let playlist of featuredPlaylists" class="playlist-card">
+          <img
+            [src]="playlist.artwork"
+            alt="{{ playlist.title }}"
+            class="playlist-image"
+          />
+          <div class="playlist-details">
+            <h3>{{ playlist.title }}</h3>
+            <p>{{ playlist.description }}</p>
+            <p>
+              <strong>Created At:</strong>
+              {{ playlist.createdAt | date : "short" }}
+            </p>
+          </div>
         </div>
       </div>
-    </section>
-  
-    <!-- Trending Section -->
-    <section class="trending-section">
-      <h2>Trending Now</h2>
-      <div class="trending-songs">
-        <div class="song-card" *ngFor="let song of trendingSongs">
-          <img [src]="song.coverImage" alt="Song Cover" class="song-image">
-          <h3>{{ song.title }}</h3>
-          <p>{{ song.artist }}</p>
-        </div>
+    </div>
+    <ng-template #loading>
+      <div>Loading...</div>
+    </ng-template>
+  </section>
+
+  <!-- Trending Section -->
+  <div class="songs-container">
+    <div *ngFor="let song of trendingSongs" class="song-card">
+      <div class="song-image">
+        <img *ngIf="song.artwork" [src]="song.artwork" alt="{{ song.title }}" />
+        <div *ngIf="!song.artwork" class="no-image">No Image Available</div>
       </div>
-    </section>
+      <div class="song-details">
+        <h3>{{ song.title }}</h3>
+        <p>Artist: {{ song.artist }}</p>
+        <a [href]="song.url" target="_blank">Listen to Song</a>
+      </div>
+    </div>
   </div>
-  
+</div>

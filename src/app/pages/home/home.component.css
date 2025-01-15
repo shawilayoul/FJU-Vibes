@@ -1,159 +1,234 @@
 .home-container {
-    font-family: 'Arial', sans-serif;
-    padding: 20px;
-    background-color: #f4f4f4;
-  }
-  
-  .home-header {
-    text-align: center;
-    margin-bottom: 40px;
-  
-    h1 {
-      font-size: 36px;
-      color: #333;
-    }
-  
-    p {
-      font-size: 18px;
-      color: #777;
-    }
-  }
-  
-  .featured-section, .trending-section {
-    margin-bottom: 40px;
-  }
-  
-  h2 {
-    font-size: 28px;
-    color: #444;
-    margin-bottom: 20px;
-  }
-  
-  .featured-playlists, .trending-songs {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .playlist-card, .song-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    flex: 1;
-    margin-bottom: 20px;
-    min-width: 220px; /* Ensure the cards are not too small */
-  }
-  
-  .playlist-card:hover, .song-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .playlist-image, .song-image {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  h3 {
-    font-size: 18px;
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 36px;
     color: #333;
-    margin-bottom: 10px;
   }
-  
+
   p {
-    font-size: 14px;
+    font-size: 18px;
     color: #777;
   }
-  
-  .home-footer {
-    text-align: center;
-    font-size: 14px;
-    color: #aaa;
-    margin-top: 40px;
+}
+/* Container for the playlist cards */
+
+.featured-section {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h1 {
+    font-size: 36px;
+    color: #333;
   }
-  
-  /* Media Queries for Responsiveness */
-  
-  /* Mobile screens */
-  @media (max-width: 768px) {
-    .home-header h1 {
-      font-size: 28px;
-    }
-  
-    .home-header p {
-      font-size: 16px;
-    }
-  
-    .featured-playlists, .trending-songs {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .playlist-card, .song-card {
-      width: 90%; /* Take up most of the screen width on mobile */
-      max-width: 300px;
-    }
-  
-    h2 {
-      font-size: 24px;
-    }
-  
-    p {
-      font-size: 12px;
-    }
+
+  p {
+    font-size: 18px;
+    color: #777;
   }
-  
-  /* Tablet screens */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .home-header h1 {
-      font-size: 32px;
-    }
-  
-    .home-header p {
-      font-size: 18px;
-    }
-  
-    .featured-playlists, .trending-songs {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  
-    .playlist-card, .song-card {
-      width: 45%;
-    }
-  
-    h2 {
-      font-size: 26px;
-    }
+}
+.playlist-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual playlist card */
+.playlist-card {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect on playlist card */
+.playlist-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image styling within the playlist card */
+.playlist-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Details section inside the playlist card */
+.playlist-details {
+  padding: 10px;
+}
+
+.playlist-details h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.playlist-details p {
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2em;
+}
+/* Container to hold all the songs */
+.songs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Each song card */
+.song-card {
+  width: 200px; /* Default width */
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Image area of the song */
+.song-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.song-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-image {
+  font-size: 14px;
+  color: #888;
+  padding: 10px;
+  background-color: #e0e0e0;
+}
+
+/* Details area of the song */
+.song-details {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.song-details h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.song-details p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.song-details a {
+  display: inline-block;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.song-details a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+
+/* On small screens like mobile (max-width: 600px), adjust layout */
+@media (max-width: 600px) {
+  .playlist-container {
+    grid-template-columns: 1fr; /* One column layout on small screens */
+    gap: 15px;
+    padding: 10px;
   }
-  
-  /* Desktop screens */
-  @media (min-width: 1025px) {
-    .home-header h1 {
-      font-size: 36px;
-    }
-  
-    .home-header p {
-      font-size: 18px;
-    }
-  
-    .featured-playlists, .trending-songs {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  
-    .playlist-card, .song-card {
-      width: 22%; /* Less width for more cards per row */
-      max-width: 300px;
-    }
-  
-    h2 {
-      font-size: 28px;
-    }
+
+  .playlist-card {
+    height: auto; /* Allow playlist cards to have dynamic height */
   }
-  
+
+  .playlist-image {
+    height: 180px; /* Slightly reduced image height for small screens */
+  }
+
+  .playlist-details h3 {
+    font-size: 1.1em; /* Adjust font size for small screens */
+  }
+
+  .playlist-details p {
+    font-size: 0.8em; /* Adjust font size for better readability */
+  }
+  .song-card {
+    width: 100%; /* One card per row on small screens */
+  }
+
+  .song-image {
+    height: 150px; /* Reduce image height on small screens */
+  }
+
+  .song-details h3 {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .song-details p {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+
+  .song-details a {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
+}
+
+/* On medium screens (between 600px and 768px), adjust layout slightly */
+@media (max-width: 768px) {
+  .playlist-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout for tablets */
+  }
+  .song-card {
+    width: 45%; /* Two cards per row on medium screens */
+  }
+}
+
+/* On large screens, retain the original layout with 3+ columns */
+@media (min-width: 1024px) {
+  .playlist-container {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(250px, 1fr)
+    ); /* More space on larger screens */
+  }
+
+  .playlist-details h3 {
+    font-size: 1.3em; /* Larger font size on bigger screens */
+  }
+}
